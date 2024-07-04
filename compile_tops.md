@@ -9,10 +9,17 @@ g++ 需要被編譯的檔案(.cpp) [-o 編譯後的執行檔名稱(.exe)]
 
 eg.
 ```shell
-g++ main.cpp -o main.exe
+g++ .\main.cpp -o .\main.exe
+.\main.exe
 ```
 
 ## File system
-### path
-移動現在目錄位置 `cd`
-往前一層
+### path (in Windows)
+- 移動現在目錄位置 `cd`
+- 往前一層 `cd ..`
+- 列出該目錄下的檔案或資料夾 `dir`
+
+### path (in Linux)
+- 移動現在目錄位置 `cd`
+- 往前一層 `cd ..`
+- 列出該目錄下的檔案或資料夾 `ls [-a|-al]`
