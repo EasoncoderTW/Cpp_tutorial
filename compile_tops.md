@@ -18,6 +18,14 @@ g++ .\main.cpp -o .\main.exe
 - 移動現在目錄位置 `cd`
 - 往前一層 `cd ..`
 - 列出該目錄下的檔案或資料夾 `dir`
+- 如果 file structure 為以下所示:
+```
+- AAA
+    - BBB
+    - CCC
+        - a.exe
+```
+目前的路徑在 `AAA/BBB`，則可以使用`..\CCC\a.exe`去執行`a.exe`。
 
 ### path (in Linux)
 - 移動現在目錄位置 `cd`
