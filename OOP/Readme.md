@@ -173,6 +173,9 @@ private:
     int age;
 
 public:
+    Person(){
+        age = 0;
+    }
     void setName(std::string n) {
         name = n;
     }
