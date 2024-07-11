@@ -7,7 +7,6 @@ typedef struct
 {
     double money;
     string name;
-    int id;
 }BankAccount;
 
 
@@ -21,4 +20,10 @@ public:
     Bank(string name);
     Bank(string name, string log_path);
     ~Bank(); // Destructor ("~"+classname)
+
+    void Create(string name);
+    void Create(string name,double money);
+
+    void Save(string name,double money);
+    void Withdraw(string name,double money);
 };
