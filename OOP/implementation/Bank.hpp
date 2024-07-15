@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <time.h>
 using namespace std;
 
 typedef struct 
@@ -15,6 +16,7 @@ private:
     string name;
     vector <BankAccount> accounts;
     string log_path;
+    void log(string s);
 public:
     Bank(); // Constructor (classname)
     Bank(string name);
