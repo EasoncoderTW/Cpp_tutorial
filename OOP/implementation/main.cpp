@@ -1,7 +1,15 @@
 #include "Bank.hpp"
 
+void demo(){
+    Bank b1("Newyork");
+    Bank *b = new Bank("Taiwans");
+
+    delete b;
+}
+
 int main()
 {
+    demo();
     Bank b1; // 沒有參數就不用加()
     Bank b2("Taipei");
     Bank b3("Tainan");
