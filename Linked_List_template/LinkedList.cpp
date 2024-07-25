@@ -4,19 +4,21 @@
 #include <iostream>
 using namespace std;
 
-LinkedList::LinkedList()
+template<typename T>
+LinkedList<T>::LinkedList()
 {
     list = NULL; // empty address
 }
-LinkedList::~LinkedList()
+template<typename T>
+LinkedList<T>::~LinkedList()
 {
     clear();
 }
 // full design
-
-void LinkedList::insert_node(const int& d, int index)
+template<typename T>
+void LinkedList<T>::insert_node(const T& d, int index)
 {
-    struct node **current = &list;
+    struct node<T> **current = &list;
     // 1. move
     for(int i = 0;i<index;i++)
     {
@@ -28,16 +30,16 @@ void LinkedList::insert_node(const int& d, int index)
         current = &((*current)->next);
     }
     // 2. create new node
-    struct node *new_node = new struct node;
+    struct node<T> *new_node = new struct node<T>;
     new_node->data = d;
     new_node->next = (*current);
     // 3. 
     (*current) = new_node;
 }
-
-int LinkedList::delete_node(int index)
+template<typename T>
+T& LinkedList<T>::delete_node(int index)
 {
-    struct node **current = &list;
+    struct node<T> **current = &list;
     // move
     for(int i = 0;i<index;i++)
     {
@@ -49,16 +51,16 @@ int LinkedList::delete_node(int index)
         current = &((*current)->next);
     }
 
-    int data = (*current)->data; // keep the data to return
-    struct node *to_del = (*current);
+    T data = (*current)->data; // keep the data to return
+    struct node<T> *to_del = (*current);
     (*current) = to_del->next;
     delete to_del;
     return data;
 }
-
-void LinkedList::dump()
+template<typename T>
+void LinkedList<T>::dump()
 {
-    struct node *a1 = list;
+    struct node<T> *a1 = list;
     cout << "[ dump ] "<< endl;
     for(int i = 0; a1 ; i++)
     {
@@ -67,10 +69,10 @@ void LinkedList::dump()
     }
     cout << endl << endl;
 }
-
-void LinkedList::clear()
+template<typename T>
+void LinkedList<T>::clear()
 {
-    struct node *next;
+    struct node<T> *next;
     while(list)
     {
         next = list->next;
@@ -78,10 +80,10 @@ void LinkedList::clear()
         list = next;
     }
 }
-
-int LinkedList::operator [](int index)
+template<typename T>
+T& LinkedList<T>::operator [](int index)
 {
-    struct node **current = &list;
+    struct node<T> **current = &list;
     // move
     for(int i = 0;i<index;i++)
     {

@@ -2,3 +2,4 @@ test/
 *.drawio*
 *.exe
 *.log
+*.o

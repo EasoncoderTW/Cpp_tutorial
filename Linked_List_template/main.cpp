@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    LinkedList L1;
+    LinkedList<int> L1;
     L1.insert_node(10,0);
     L1.insert_node(20,0);
     L1.dump();
