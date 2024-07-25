@@ -22,6 +22,4 @@ class LinkedList
         struct node* list; // head of list
 };
 
-
-
 #endif
