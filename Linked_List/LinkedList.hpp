@@ -13,7 +13,7 @@ class LinkedList
     public:
         LinkedList();
         ~LinkedList();
-        void insert_node(const int& d, int index);
+        void insert_node(int d, int index);
         int delete_node(int index);
         void dump();
         void clear();

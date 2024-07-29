@@ -14,7 +14,7 @@ LinkedList::~LinkedList()
 }
 // full design
 
-void LinkedList::insert_node(const int& d, int index)
+void LinkedList::insert_node(int d, int index)
 {
     struct node **current = &list;
     // 1. move
