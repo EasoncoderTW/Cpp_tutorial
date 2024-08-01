@@ -17,5 +17,16 @@ int main()
 
     L1.clear();
     L1.dump();
+
+    cout << "Demo Stack Operation" << endl;
+    
+    Stack<int> S1;
+    for(int i = 0;i<10;i++) S1.push(i);
+    S1.dump();
+    int a = S1.pop(); cout << a << endl;
+    a = S1.pop(); cout << a << endl;
+    a = S1.pop(); cout << a << endl;
+    S1.dump();
+
     return 0;
 }

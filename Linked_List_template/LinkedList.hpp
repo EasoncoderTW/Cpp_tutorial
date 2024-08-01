@@ -17,7 +17,6 @@ template <typename T>
 class LinkedList
 {
     public:
-        
         LinkedList();
         ~LinkedList();       
         void insert_node(const T d, int index);
@@ -25,7 +24,7 @@ class LinkedList
         void dump();
         void clear();
         T operator [](int index); // peek
-    private:
+    protected:
         struct node<T>* list; // head of list
 };
 
@@ -122,6 +121,44 @@ T LinkedList<T>::operator [](int index)
         current = &((*current)->next);
     }
     return (*current) -> data;
+}
+
+
+/* stack */
+template <typename T>
+class Stack : protected LinkedList<T>
+{
+    public:
+        Stack();// 使用父類別的建構式
+        ~Stack();
+        void push(T data);
+        T pop();
+        dump(){LinkedList<T>::dump();};
+        clear(){LinkedList<T>::clear();};
+};
+
+template <typename T>
+Stack<T>::Stack()
+{
+    LinkedList<T>::list = NULL;
+}
+
+template <typename T>
+Stack<T>::~Stack()
+{
+    LinkedList<T>::clear();
+}
+
+template <typename T>
+void Stack<T>::push(T data)
+{
+    LinkedList<T>::insert_node(data, 0);
+}
+
+template <typename T>
+T Stack<T>::pop()
+{
+    return LinkedList<T>::delete_node(0);
 }
 
 #endif
