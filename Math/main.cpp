@@ -59,7 +59,7 @@ double calculate(double a, double b, int op)
     return ans;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     /*
         1,"+",2,"+",3 (infix)
@@ -85,7 +85,12 @@ int main()
         -> a. number (string to double)
         -> b. operator symbal (string to int code)
     */
-    string s = "3+(1+(2*3))*3=";
+    if(argc != 2){
+        cout << "usage: Type in the Mathematical expressions." << endl;
+        return 0;
+    }
+
+    string s = argv[1]; // get the expressions from CLI
     string temp = "";
     vector<token> parsed;
     for(char c : s)
